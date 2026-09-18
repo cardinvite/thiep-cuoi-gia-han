@@ -111,6 +111,8 @@
       // Im lặng giữ nguyên giá mặc định có sẵn trong HTML, chỉ log để dev biết.
       console.warn('[pricing-sheet] Không tải được bảng giá từ Google Sheet:', err.message);
     }
+    // Nội dung mới có thể dài/ngắn hơn bản thiết kế: xếp lại các thẻ theo text.
+    if (window.PricingLayout) window.PricingLayout.reflow();
   }
 
   if (document.readyState === 'loading') {
